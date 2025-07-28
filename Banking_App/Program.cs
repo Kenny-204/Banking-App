@@ -10,15 +10,19 @@ namespace Bank
     public class BankApp
 
     {
-        static bool doFilesExist = File.Exists("users.json");
-        static string? json = doFilesExist ? File.ReadAllText("users.json") : null;
-        static string? meta = doFilesExist ? File.ReadAllText("metadata.json") : null;
-        internal static int _nextInt = File.Exists("metadata.json") ? JsonSerializer.Deserialize<int>(meta!) : 1;
+        static string projectRoot = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
+        static string fullMetadataPath = Path.Combine(projectRoot, "data", "metadata.json");
+        static string fullUsersPath = Path.Combine(projectRoot, "data", "user.json");
+        static bool doFilesExist = File.Exists(fullUsersPath);
+
+        static string? json = doFilesExist ? File.ReadAllText(fullUsersPath) : null;
+        static string? meta = doFilesExist ? File.ReadAllText(fullMetadataPath) : null;
+        internal static int _nextInt = File.Exists(fullMetadataPath) ? JsonSerializer.Deserialize<int>(meta!) : 1;
 
         /// <summary>
         /// A dictionary to store all the created users/home/kenny/Desktop/Banking_App/Banking_App/Data
         /// </summary>
-        public static Dictionary<string, User> Users = File.Exists("users.json") ?
+        public static Dictionary<string, User> Users = File.Exists(fullUsersPath) ?
 
         JsonSerializer.Deserialize<Dictionary<string, User>>(json!)!
 
@@ -43,7 +47,7 @@ namespace Bank
                         bool deposited = false;
                         while (!deposited)
                         {
-                        
+
                             int depositAmount = int.Parse(ValidationServices.LoopTillValid("amount to deposit", ValidationServices.IsValidNumber));
                             Console.WriteLine("Input Password");
                             string depositPassword = Console.ReadLine()!;

@@ -8,8 +8,6 @@ namespace Bank.Services
 
     public static class AuthenticationService
     {
-
-
         /// <summary>
         /// collects and validates user input to create a new bank account and stores the user to the Users dictionary
         /// </summary>
@@ -41,7 +39,7 @@ namespace Bank.Services
                 confirm = option == 1;
 
             }
-            BankApp.Users.Add(accountNumber, new User(name, email, gender, accountNumber, PasswordHelper.hashPassword(password)));
+            BankApp.Users.Add(accountNumber, new User(name, email, gender.ToLower(), accountNumber, PasswordHelper.hashPassword(password)));
             BankApp._nextInt++;
             FileService.SaveUsersToFile();
             FileService.SaveMetaData();

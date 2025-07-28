@@ -9,8 +9,10 @@ namespace Bank.Services
         /// </summary>
         public static void SaveMetaData()
         {
+            var projectRoot = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
+            var fullPath = Path.Combine(projectRoot, "data", "metadata.json");
             var json = JsonSerializer.Serialize(BankApp._nextInt);
-            File.WriteAllText("metadata.json", json);
+            File.WriteAllText(fullPath, json);
         }
 
         /// <summary>
@@ -18,8 +20,10 @@ namespace Bank.Services
         /// </summary>
         public static void SaveUsersToFile()
         {
+            var projectRoot = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
+            var fullPath = Path.Combine(projectRoot, "data", "user.json");
             var json = JsonSerializer.Serialize(BankApp.Users);
-            File.WriteAllText("users.json", json);
+            File.WriteAllText(fullPath, json);
         }
 
 

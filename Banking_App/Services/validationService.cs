@@ -5,13 +5,28 @@ namespace Bank.Services
 {
     public static class ValidationServices
     {
- 
+        /// <summary>
+        /// check if the input is empty
+        /// </summary>
+        /// <param name="input">the input</param>
+        /// <returns>true if the input is empty and false if its nor</returns>
         public static bool IsInputNotEmpty(string input) => !string.IsNullOrWhiteSpace(input);
+        /// <summary>
+        /// checks if the account number exists
+        /// </summary>
+        /// <param name="input">the input account number</param>
+        /// <returns>True if exists and false if it doesnt</returns>
         public static bool IsAccountNumberValid(string input) => BankApp.Users.ContainsKey(input);
         public static bool IsEmailValid(string input) => input.Contains('@') && input.Contains(".com");
-        public static bool IsGenderValid(string input) => input == "male" || input == "female";
+        public static bool IsGenderValid(string input) => input.Equals("male", StringComparison.CurrentCultureIgnoreCase) || input.Equals("female", StringComparison.CurrentCultureIgnoreCase);
         public static bool IsValidNumber(string input) => int.TryParse(input, out var result) && !(int.Parse(input) < 0);
-
+        /// <summary>
+        /// Keeps asking the user for input while the input is invalid
+        /// </summary>
+        /// <param name="fieldName">The type of input</param>
+        /// <param name="isValid">A function which validates the input</param>
+        /// <param name="errorMessage">an optional error message</param>
+        /// <returns>a valid input</returns>
 
         public static string LoopTillValid(string fieldName, Func<string, bool> isValid, string? errorMessage = null)
         {
@@ -51,7 +66,7 @@ namespace Bank.Services
                     valid = true;
                 }
             }
-           if (fieldName == "password")
+            if (fieldName == "password")
             {
                 bool validPassword = false;
                 while (!validPassword)
@@ -88,7 +103,7 @@ namespace Bank.Services
         public static string validateField(string field, string fieldName)
         {
             string validString = field;
- 
+
             if (fieldName == "password")
             {
                 string password = field;
