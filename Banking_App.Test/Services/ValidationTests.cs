@@ -1,4 +1,5 @@
 using Bank;
+using Bank.Models;
 using Bank.Services;
 
 
@@ -70,7 +71,7 @@ public class UnitTest1
     [Fact]
     public void IsAccountNumberValid_InputExistingUser_ReturnTrue()
     {
-        BankApp.Users["AC001"] = new Bank.Models.User("kenny", "mail@mail.com", "male", "AC001", "pass");
+        BankApp.Users["AC001"] = new User("kenny", "mail@mail.com", "male", "AC001", "pass");
         Assert.True(ValidationServices.IsAccountNumberValid("AC001"));
     }
     [Fact]
