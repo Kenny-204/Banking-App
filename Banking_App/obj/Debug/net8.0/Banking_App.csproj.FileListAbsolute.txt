@@ -1,0 +1,15 @@
+/home/kenny/Desktop/Banking_App/Banking_App/bin/Debug/net8.0/Banking_App
+/home/kenny/Desktop/Banking_App/Banking_App/bin/Debug/net8.0/Banking_App.deps.json
+/home/kenny/Desktop/Banking_App/Banking_App/bin/Debug/net8.0/Banking_App.runtimeconfig.json
+/home/kenny/Desktop/Banking_App/Banking_App/bin/Debug/net8.0/Banking_App.dll
+/home/kenny/Desktop/Banking_App/Banking_App/bin/Debug/net8.0/Banking_App.pdb
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/Banking_App.GeneratedMSBuildEditorConfig.editorconfig
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/Banking_App.AssemblyInfoInputs.cache
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/Banking_App.AssemblyInfo.cs
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/Banking_App.csproj.CoreCompileInputs.cache
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/Banking_App.sourcelink.json
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/Banking_App.dll
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/refint/Banking_App.dll
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/Banking_App.pdb
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/Banking_App.genruntimeconfig.cache
+/home/kenny/Desktop/Banking_App/Banking_App/obj/Debug/net8.0/ref/Banking_App.dll
